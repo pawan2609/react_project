@@ -1,7 +1,14 @@
-import "./App.css";
+import React from "react";
+import FormComponent from "./components/FormComponent";
+import TableComponent from "./components/TableComponent";
 
-function App() {
-  return <div className="App">Test</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <FormComponent />
+      <TableComponent />
+    </div>
+  );
+};
 
 export default App;
