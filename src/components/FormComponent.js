@@ -12,6 +12,14 @@ const FormComponent = () => {
     form.resetFields();
   };
 
+  const validateMobileNumber = (_, value) => {
+    if (!value || value.length === 10) {
+      return Promise.resolve();
+    }
+    return Promise.reject(
+      new Error("Please input a valid 10-digit mobile number!")
+    );
+  };
   return (
     <div className="main-screen">
       <Form
@@ -47,6 +55,7 @@ const FormComponent = () => {
           name="contact"
           rules={[
             { required: true, message: "Please input your contact number!" },
+            { validator: validateMobileNumber },
           ]}
         >
           <Input type="number" />
